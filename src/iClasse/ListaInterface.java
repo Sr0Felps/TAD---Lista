@@ -1,4 +1,18 @@
 package iClasse;
 
-public class ListaInterface {
+public interface ListaInterface<T> {
+    void inserirInicio(T item);
+    void inserirFim(T item);
+    void inserirPosicao(Integer indice, T item);
+
+    T removerFim();
+    T removerInicio();
+    T removerPosicao(Integer indice);
+
+    T get(Integer indice);
+    T primeiro();
+    T ultimo();
+
+    Boolean vazia();
+    Integer tamanho();
 }

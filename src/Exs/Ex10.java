@@ -1,3 +1,5 @@
+package Exs;
+
 /*
 10. Implemente um procedimento que, em uma lista circular,
 realize uma simulação da “brincadeira da batata quente”:

@@ -1,3 +1,5 @@
+package Exs;
+
 /*
 8. Implemente um procedimento que, em uma lista duplamente encadeada
 de strings, percorra do início para o fim e depois do fim para o início,

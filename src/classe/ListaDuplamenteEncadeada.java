@@ -1,16 +1,16 @@
 package classe;
 
 import iClasse.ListaInterface;
-import node.NoDuplo;
+import nodes.NoDuplo;
 
 import java.util.NoSuchElementException;
 
-public class Lista<T> implements ListaInterface<T> {
+public class ListaDuplamenteEncadeada<T> implements ListaInterface<T> {
     private NoDuplo<T> inicio; //cabeça (head)
     private NoDuplo<T> fim; //cauda (tail)
     private Integer tamanho;
 
-    public Lista(){
+    public ListaDuplamenteEncadeada(){
         this.inicio = null;
         this.fim = null;
         this.tamanho = 0;
@@ -65,7 +65,7 @@ public class Lista<T> implements ListaInterface<T> {
 
     @Override
     public T removerFim() {
-        if(vazia()) throw new NoSuchElementException("## ERRO: Lista Vazia");
+        if(vazia()) throw new NoSuchElementException("## ERRO: ListaDuplamenteEncadeada Vazia");
         T valor = fim.getDado();
         fim = fim.getAnt();
         if(fim != null){
@@ -79,7 +79,7 @@ public class Lista<T> implements ListaInterface<T> {
 
     @Override
     public T removerInicio() {
-        if(vazia()) throw new NoSuchElementException("## ERRO: Lista Vazia");
+        if(vazia()) throw new NoSuchElementException("## ERRO: ListaDuplamenteEncadeada Vazia");
         T valor = inicio.getDado();
         inicio = inicio.getProx();
         if(inicio != null){
@@ -93,7 +93,7 @@ public class Lista<T> implements ListaInterface<T> {
 
     @Override
     public T removerPosicao(Integer indice) {
-        if(vazia()) throw new NoSuchElementException("## ERRO: Lista Vazia");
+        if(vazia()) throw new NoSuchElementException("## ERRO: ListaDuplamenteEncadeada Vazia");
         if(indice < 0 || indice >= tamanho){
             throw new IndexOutOfBoundsException("## ERRO: Indice inválido: "+indice+"!!");
         }
@@ -119,13 +119,13 @@ public class Lista<T> implements ListaInterface<T> {
 
     @Override
     public T primeiro() {
-        if(vazia()) throw new NoSuchElementException("## ERRO: Lista Vazia");
+        if(vazia()) throw new NoSuchElementException("## ERRO: ListaDuplamenteEncadeada Vazia");
         return inicio.getDado();
     }
 
     @Override
     public T ultimo() {
-        if(vazia()) throw new NoSuchElementException("## ERRO: Lista Vazia");
+        if(vazia()) throw new NoSuchElementException("## ERRO: ListaDuplamenteEncadeada Vazia");
         return fim.getDado();
     }
 

@@ -1,3 +1,5 @@
+package Exs;
+
 /*
 9. Implemente um procedimento que divida uma lista encadeada
 de inteiros em duas: uma contendo apenas elementos menores

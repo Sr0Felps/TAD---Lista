@@ -1,4 +1,4 @@
-package node;
+package nodes;
 
 public class NoDuplo<T> {
     private T dado;
