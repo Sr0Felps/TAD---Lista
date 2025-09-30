@@ -47,18 +47,18 @@ public class ListaCircular<T> implements ListaInterface<T> {
 
     @Override
     public void inserirPosicao(Integer indice, T item) {
-        if(indice < 0 || indice >= tamanho){
+        if(indice < 0 || indice > tamanho){
             throw new IndexOutOfBoundsException("Indice inválido: "+indice+"!!");
         }
         if(indice == 0) {
             inserirInicio(item);
             return;
         }
-        if(indice==tamanho-1) {
+        if(indice == tamanho) {
             inserirFim(item);
             return;
         }
-        No<T> anterior = noPosicao(indice);
+        No<T> anterior = noPosicao(indice - 1);
         No<T> novo =  new No<>(item);
         novo.setProx(anterior.getProx());
         anterior.setProx(novo);
@@ -100,8 +100,15 @@ public class ListaCircular<T> implements ListaInterface<T> {
         if(indice < 0 || indice >= tamanho){
             throw new IndexOutOfBoundsException("Indice inválido: "+indice+"!!");
         }
-        if(indice == 0) removerInicio();
-        if(indice == tamanho-1) removerFim();
+
+        if(indice == 0) {
+            return removerInicio();
+        }
+
+        if(indice == tamanho-1) {
+            return removerFim();
+        }
+
         No<T> anterior = noPosicao(indice-1);
         No<T> alvo = anterior.getProx();
         anterior.setProx(alvo.getProx());
@@ -120,11 +127,13 @@ public class ListaCircular<T> implements ListaInterface<T> {
 
     @Override
     public T primeiro() {
+        if(vazia()) throw new NoSuchElementException("ERRO: Lista Vazia!");
         return inicio.getDado();
     }
 
     @Override
     public T ultimo() {
+        if(vazia()) throw new NoSuchElementException("ERRO: Lista Vazia!");
         return fim.getDado();
     }
 
@@ -146,22 +155,24 @@ public class ListaCircular<T> implements ListaInterface<T> {
         return atual;
     }
 
-
-    public void printLista(){
+    public String toString(){
         if(vazia()){
-            System.out.println("** LISTA VAZIA **");
-            return;
+            return "[** LISTA VAZIA **]";
         }
         No<T> atual = inicio;
         StringBuilder contrutorString = new StringBuilder();
         for (int i = 0; i < tamanho(); i++){
             contrutorString.append(atual.getDado());
-            if(atual != fim){
+            if(i < tamanho() - 1){
                 contrutorString.append(" -> ");
             }
             atual = atual.getProx();
         }
-        System.out.print(contrutorString);
+        return contrutorString.toString();
+    }
+
+    public void printLista(){
+        System.out.print(this.toString());
     }
 
 }
