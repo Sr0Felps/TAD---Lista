@@ -45,16 +45,11 @@ Certifique-se de ter o **JDK (Java Development Kit)** instalado em sua máquina.
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [LINK DO SEU REPOSITÓRIO]
+    git clone https://github.com/Sr0Felps/TAD---Lista.git
     cd TAD---Lista
     ```
 2.  **Estrutura de Classes:** As classes de lista e nós estão em `src/classe/` e `src/nodes/`.
-3.  **Execução dos Exercícios:** Para rodar um exercício específico, compile e execute o arquivo correspondente na pasta `src/Exs/`. Por exemplo, para o Exercício 1:
-    ```bash
-    # (Este é um comando genérico, use sua IDE como IntelliJ/Eclipse para rodar facilmente)
-    javac src/Exs/Ex1.java src/classe/*.java src/iClasse/*.java src/nodes/*.java
-    java Exs.Ex1
-    ```
+3.  **Execução dos Exercícios:** Para rodar um exercício específico, compile e execute o arquivo correspondente na pasta `src/Exs/`.
 
 ## 🧑‍💻 Autor(es)
 
@@ -63,3 +58,4 @@ Certifique-se de ter o **JDK (Java Development Kit)** instalado em sua máquina.
 | Filipe Costa Junqueira | Sr0Felps(https://github.com/Sr0Felps) |
 
 ---
+
